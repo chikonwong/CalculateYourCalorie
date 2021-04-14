@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".EditProfileActivity">
+
+    <ImageView
+        android:id="@+id/ImageView_ProfilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:padding="15dp"
+        app:srcCompat="@drawable/profile" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#52b788" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileName_Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageView_ProfilePicture" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Name"
+        android:inputType="text"
+        android:maxLines="1"
+        android:text=""
+        android:textSize="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#52b788" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileGender_Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gender" />
+
+
+    <TextView
+        android:id="@+id/TextView_ProfileGender"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Gender"
+        android:inputType="number"
+        android:text=""
+        android:textSize="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#52b788" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileTarget_Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Target" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileTarget"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Target"
+        android:inputType="number"
+        android:text=""
+        android:textSize="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#52b788" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileCalorieLimit_Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calorie Limit Per Day" />
+
+    <TextView
+        android:id="@+id/TextView_ProfileCalorieLimit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="CalorieLimit"
+        android:inputType="number"
+        android:text=""
+        android:textSize="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#52b788" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/Button_EditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:text="Edit" />
+    </LinearLayout>
+
+</LinearLayout>

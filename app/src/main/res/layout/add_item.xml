@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:padding="26dp"
+    tools:context=".AddItemActivity">
+
+    <TextView
+        android:id="@+id/TextView_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="" android:textSize="25sp"
+        android:inputType="datetime" />
+
+
+    <RadioGroup
+        android:id="@+id/RadioGroup_Period"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RadioButton_Period_Breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onPeriodRadioButtonClicked"
+            android:text="breakfast" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Period_Lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onPeriodRadioButtonClicked"
+            android:text="lunch" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Period_Dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onPeriodRadioButtonClicked"
+            android:text="dinner" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Period_Others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onPeriodRadioButtonClicked"
+            android:text="others" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup_Category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RadioButton_Category_Grains"
+            android:layout_width="98dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCategoryRadioButtonClicked"
+            android:text="grains" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Category_Vegetables"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCategoryRadioButtonClicked"
+            android:text="vegetables" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Category_Protein"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCategoryRadioButtonClicked"
+            android:text="protein" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Category_Fruits"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCategoryRadioButtonClicked"
+            android:text="fruits" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/EditText_FoodName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:hint="Food" />
+
+
+    <EditText
+        android:id="@+id/EditText_Calories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:hint="Cal"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/Button_AddData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add" />
+
+
+</LinearLayout>
