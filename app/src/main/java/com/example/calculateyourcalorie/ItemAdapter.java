@@ -19,7 +19,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
     private List<Item> items = new ArrayList<>();
 
 
-    private OnItemIsClickListener listener;
+//    private OnItemIsClickListener listener;
 
     public class ItemHolder extends RecyclerView.ViewHolder {
         private TextView textViewFoodName, textViewCal;
@@ -32,10 +32,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    if ( listener != null && position != RecyclerView.NO_POSITION) {
-                        Toast.makeText(view.getContext(), "Item" + position + 1, Toast.LENGTH_SHORT).show();
-                        listener.onItemClick(items.get(position));
-                    }
+//                    if ( listener != null && position != RecyclerView.NO_POSITION) {
+//                        Toast.makeText(view.getContext(), "Item" + position + 1, Toast.LENGTH_SHORT).show();
+//                        listener.onItemClick(items.get(position));
+//                    }
                 }
             });
         }
@@ -71,11 +71,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
     }
 
     // onclick listener when click recyclerview item
-    public interface OnItemIsClickListener {
-        void onItemClick(Item item);
-    }
-
-    public void setOnItemClickListener(OnItemIsClickListener listener) {
-        this.listener = listener;
-    }
+//    public interface OnItemIsClickListener {
+//        void onItemClick(Item item);
+//    }
+//
+//    public void setOnItemClickListener(OnItemIsClickListener listener) {
+//        this.listener = listener;
+//    }
 }
