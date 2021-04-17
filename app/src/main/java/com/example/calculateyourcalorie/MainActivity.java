@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(@NonNull List<Item> items) {
                 // update recyclerview
                 adapter.setItems(items);
-                Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -30,18 +30,18 @@ public class AddItemActivity extends AppCompatActivity {
     public static final String EXTRA_FOODNAME = "com.example.calculateyourcalorie.EXTRA_FOODNAME";
     public static final String EXTRA_CALORIES = "com.example.calculateyourcalorie.EXTRA_CALORIES";
 
-    private TextView SetDate;
+    private TextView tvDate;
     private RadioGroup radioGroupPeriod;
     private RadioButton SetItemPeriod;
     private RadioGroup radioGroupCategory;
     private RadioButton SetItemCategory;
-    private EditText SetFoodName;
-    private EditText SetCalories;
+    private EditText etFoodName;
+    private EditText etCalories;
     private Button buttonAdd;
-//    private EditText SetDate;
+
     DatePickerDialog.OnDateSetListener setListener;
 
-    String systemDate = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
+    String systemDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class AddItemActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Add Item");
 
-        SetDate = findViewById(R.id.TextView_Date);
+        tvDate = findViewById(R.id.TextView_Date);
         
         // date picker dialog
         Calendar calendar = Calendar.getInstance();
@@ -58,7 +58,7 @@ public class AddItemActivity extends AppCompatActivity {
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        SetDate.setOnClickListener(new View.OnClickListener() {
+        tvDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -74,18 +74,18 @@ public class AddItemActivity extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month+1;
                 String date = day+"/"+month+"/"+year;
-                SetDate.setText(date);
+                tvDate.setText(date);
 
             }
         };
 
 
         // get system date
-        SetDate.setText(systemDate);
+        tvDate.setText(systemDate);
         radioGroupPeriod = findViewById(R.id.RadioGroup_Period);
         radioGroupCategory = findViewById(R.id.RadioGroup_Category);
-        SetFoodName = findViewById(R.id.EditText_FoodName);
-        SetCalories = findViewById(R.id.EditText_Calories);
+        etFoodName = findViewById(R.id.EditText_FoodName);
+        etCalories = findViewById(R.id.EditText_Calories);
 
         buttonAdd = findViewById(R.id.Button_AddData);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +95,8 @@ public class AddItemActivity extends AppCompatActivity {
                 String date = systemDate;
                 String period = SetItemPeriod.getText().toString();
                 String category = SetItemCategory.getText().toString();
-                String foodname = SetFoodName.getText().toString();
-                int calories = Integer.parseInt(SetCalories.getText().toString());
+                String foodname = etFoodName.getText().toString();
+                int calories = Integer.parseInt(etCalories.getText().toString());
 
                 Intent data = new Intent();
                 data.putExtra(EXTRA_DATE, date);
@@ -109,11 +109,11 @@ public class AddItemActivity extends AppCompatActivity {
                 finish();
 
                 Toast.makeText(AddItemActivity.this,
-                        "Date" + SetDate.getText().toString() +
+                        "Date" + tvDate.getText().toString() +
                                 " Period : " + SetItemPeriod.getText().toString() +
                                 " Catefory : " + SetItemCategory.getText().toString() +
-                                " FoodName : " + SetFoodName.getText().toString() +
-                                " Calories : " + SetCalories.getText().toString()
+                                " FoodName : " + etFoodName.getText().toString() +
+                                " Calories : " + etCalories.getText().toString()
                         , Toast.LENGTH_LONG).show();
             }
         });
