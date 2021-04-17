@@ -21,17 +21,11 @@ public class EditProfileActivity extends AppCompatActivity {
     private EditText SetProfileCalorieLimit;
     private Button buttonSave;
 
-    private TextView SetNavHeaderName;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eidt_profile);
         getSupportActionBar().setTitle("Profile");
-
-
-//        SetNavHeaderName = findViewById(R.id.TextView_NavHeaderName);
-
 
         radioGroup = findViewById(R.id.RadioGroup_Set_Gender);
         SetProfileName = findViewById(R.id.EditText_Edit_ProfileName);
@@ -41,8 +35,6 @@ public class EditProfileActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                SetNavHeaderName.setText(SetProfileName.getText().toString());
-
                 saveProfile();
                 Toast.makeText(EditProfileActivity.this,
                         "Name : " + SetProfileName.getText().toString() +
@@ -62,7 +54,6 @@ public class EditProfileActivity extends AppCompatActivity {
     public void saveProfile(){
         Intent intent = new Intent(EditProfileActivity.this,ProfileActivity.class);
         Bundle bundle = new Bundle();
-
         bundle.putString("name" ,SetProfileName.getText().toString());
         bundle.putString("gender" ,SetProfileGender.getText().toString());
         bundle.putString("target" ,SetProfileTarget.getText().toString());

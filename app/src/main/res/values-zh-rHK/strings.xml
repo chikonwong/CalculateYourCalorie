@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CalculateYourCalorie</string>
-    <string name="openDrawer">open</string>
-    <string name="closeDrawer">close</string>
+    <string name="app_name">卡路里日記</string>
+    <string name="openDrawer">打開</string>
+    <string name="closeDrawer">關閉</string>
     <string name="food">食物</string>
+    <string name="profile">個人檔案</string>
+    <string name="setting">設定</string>
+    <string name="editprofile">編輯個人檔案</string>
+    <string name="name">姓名</string>
+    <string name="gender">性別</string>
+    <string name="target">目標</string>
+    <string name="calorie_limit_per_day">每日攝取卡路里上限</string>
+    <string name="edit">編輯</string>
+    <string name="foodname">食物名稱</string>
+    <string name="cal">卡路里</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="finish">完</string>
+    <string name="breakfast">早餐</string>
+    <string name="lunch">午餐</string>
+    <string name="dinner">晚餐</string>
+    <string name="others">其他</string>
+    <string name="grains">五穀類</string>
+    <string name="vegetables">蔬菜</string>
+    <string name="protein">蛋白質</string>
+    <string name="fruits">生果</string>
+    <string name="add">新增</string>
 </resources>

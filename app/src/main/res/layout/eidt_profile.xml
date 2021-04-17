@@ -21,7 +21,7 @@
         android:id="@+id/TextView_Edit_ProfileName_Header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="@string/name"
         android:inputType="text"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
         android:id="@+id/TextView_Edit_ProfileGender_Header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Gender"
+        android:text="@string/gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
-            android:text="Male" />
+            android:text="@string/male" />
 
         <RadioButton
             android:id="@+id/RadioButton_Set_Gender_Female"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
-            android:text="Female" />
+            android:text="@string/female" />
 
     </RadioGroup>
 
@@ -81,7 +81,7 @@
         android:id="@+id/TextView_Edit_ProfileTarget_Header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Target"
+        android:text="@string/target"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
         android:layout_height="50dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Target"
+        android:hint="@string/target"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -104,7 +104,7 @@
         android:id="@+id/TextView_Edit_ProfileCalorieLimit_Header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Calorie Limit Per Day"
+        android:text="@string/calorie_limit_per_day"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +116,7 @@
         android:layout_height="50dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Calorie Limit"
+        android:hint="@string/cal"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -128,7 +128,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
-        android:text="Finish"
+        android:text="@string/finish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

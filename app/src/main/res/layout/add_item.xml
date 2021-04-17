@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onPeriodRadioButtonClicked"
-            android:text="breakfast" />
+            android:text="@string/breakfast" />
 
         <RadioButton
             android:id="@+id/RadioButton_Period_Lunch"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onPeriodRadioButtonClicked"
-            android:text="lunch" />
+            android:text="@string/lunch" />
 
         <RadioButton
             android:id="@+id/RadioButton_Period_Dinner"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onPeriodRadioButtonClicked"
-            android:text="dinner" />
+            android:text="@string/dinner" />
 
         <RadioButton
             android:id="@+id/RadioButton_Period_Others"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onPeriodRadioButtonClicked"
-            android:text="others" />
+            android:text="@string/others" />
     </RadioGroup>
 
     <RadioGroup
@@ -73,7 +73,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onCategoryRadioButtonClicked"
-            android:text="grains" />
+            android:text="@string/grains" />
 
         <RadioButton
             android:id="@+id/RadioButton_Category_Vegetables"
@@ -81,7 +81,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onCategoryRadioButtonClicked"
-            android:text="vegetables" />
+            android:text="@string/vegetables" />
 
         <RadioButton
             android:id="@+id/RadioButton_Category_Protein"
@@ -89,7 +89,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onCategoryRadioButtonClicked"
-            android:text="protein" />
+            android:text="@string/protein" />
 
         <RadioButton
             android:id="@+id/RadioButton_Category_Fruits"
@@ -97,7 +97,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onCategoryRadioButtonClicked"
-            android:text="fruits" />
+            android:text="@string/fruits" />
     </RadioGroup>
 
     <EditText
@@ -115,14 +115,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:ems="10"
-        android:hint="Cal"
+        android:hint="@string/cal"
         android:inputType="number" />
 
     <Button
         android:id="@+id/Button_AddData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="add" />
+        android:text="@string/add" />
 
 
 </LinearLayout>

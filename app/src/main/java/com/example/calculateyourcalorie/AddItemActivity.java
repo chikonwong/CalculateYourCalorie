@@ -75,7 +75,6 @@ public class AddItemActivity extends AppCompatActivity {
                 month = month + 1;
                 String date = day + "/" + month + "/" + year;
                 tvDate.setText(date);
-
             }
         };
 
