@@ -51,7 +51,7 @@ public class AddItemActivity extends AppCompatActivity {
         actionBar.setTitle("Add Item");
 
         tvDate = findViewById(R.id.TextView_Date);
-        
+
         // date picker dialog
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -63,7 +63,7 @@ public class AddItemActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         AddItemActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        setListener,year,month,day);
+                        setListener, year, month, day);
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 datePickerDialog.show();
             }
@@ -72,8 +72,8 @@ public class AddItemActivity extends AppCompatActivity {
         setListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                month = month+1;
-                String date = day+"/"+month+"/"+year;
+                month = month + 1;
+                String date = day + "/" + month + "/" + year;
                 tvDate.setText(date);
 
             }
@@ -91,23 +91,31 @@ public class AddItemActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                systemDate = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss ", Locale.getDefault()).format(new Date());
-                String date = systemDate;
-                String period = SetItemPeriod.getText().toString();
-                String category = SetItemCategory.getText().toString();
-                String foodname = etFoodName.getText().toString();
-                int calories = Integer.parseInt(etCalories.getText().toString());
+                if (etFoodName.getText().toString().isEmpty() ||
+                        etCalories.getText().toString().isEmpty() ||
+                        tvDate.getText().toString().isEmpty() ||
+                        SetItemPeriod.getText().toString().isEmpty() ||
+                        SetItemCategory.getText().toString().isEmpty()) {
+                    Toast.makeText(AddItemActivity.this, "please fill in all the grids", Toast.LENGTH_SHORT).show();
+                    return;
+                }else {
+                    systemDate = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss ", Locale.getDefault()).format(new Date());
+                    String date = systemDate;
+                    String period = SetItemPeriod.getText().toString();
+                    String category = SetItemCategory.getText().toString();
+                    String foodname = etFoodName.getText().toString();
+                    int calories = Integer.parseInt(etCalories.getText().toString());
 
-                Intent data = new Intent();
-                data.putExtra(EXTRA_DATE, date);
-                data.putExtra(EXTRA_PERIOD, period);
-                data.putExtra(EXTRA_CATEGORY, category);
-                data.putExtra(EXTRA_FOODNAME, foodname);
-                data.putExtra(EXTRA_CALORIES, calories);
+                    Intent data = new Intent();
+                    data.putExtra(EXTRA_DATE, date);
+                    data.putExtra(EXTRA_PERIOD, period);
+                    data.putExtra(EXTRA_CATEGORY, category);
+                    data.putExtra(EXTRA_FOODNAME, foodname);
+                    data.putExtra(EXTRA_CALORIES, calories);
 
-                setResult(RESULT_OK, data);
-                finish();
-
+                    setResult(RESULT_OK, data);
+                    finish();
+                }
                 Toast.makeText(AddItemActivity.this,
                         "Date" + tvDate.getText().toString() +
                                 " Period : " + SetItemPeriod.getText().toString() +

@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CalculateYourCalorie</string>
     <string name="openDrawer">open</string>
     <string name="closeDrawer">close</string>
-    <string name="food">Food</string>
+    <string name="food">食物</string>
 </resources>
