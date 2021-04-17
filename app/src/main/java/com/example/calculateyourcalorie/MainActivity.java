@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                         Intent profile = new Intent(MainActivity.this, ProfileActivity.class);
                         startActivity(profile);
                         break;
-                    case R.id.Setting:
-                        Intent setting = new Intent(MainActivity.this, EditProfileActivity.class);
+                    case R.id.Settings:
+                        Intent setting = new Intent(MainActivity.this, SettingsActivity.class);
                         startActivity(setting);
                         break;
                 }
@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(@NonNull List<Item> items) {
                 // update recyclerview
                 adapter.setItems(items);
-//                Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
             }
         });
 

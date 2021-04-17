@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculateYourCalorie">
         <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity
             android:name=".ProfileActivity"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -17,7 +22,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".EditProfileActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".SettingsActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.CalculateYourCalorie.NoActionBar">

@@ -10,9 +10,10 @@
             android:icon="@drawable/ic_baseline_person_24"
             android:title="Profile" />
         <item
-            android:id="@+id/Setting"
+            android:id="@+id/Settings"
             android:icon="@drawable/ic_baseline_settings_24"
             android:title="Setting" />
 
     </group>
+
 </menu>
