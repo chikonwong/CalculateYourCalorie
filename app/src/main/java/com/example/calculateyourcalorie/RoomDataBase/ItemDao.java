@@ -29,6 +29,6 @@ public interface ItemDao {
     // if item_table have any change, display automatically
     LiveData<List<Item>> getAllItems();
 
-    @Query("SELECT SUM(calories) FROM item_table")
+    @Query("SELECT TOTAL(calories) FROM item_table")
     LiveData<Integer> getTotalCalories();
 }
