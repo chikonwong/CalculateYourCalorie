@@ -39,11 +39,8 @@ public class ItemViewModel extends AndroidViewModel {
 
     public LiveData<List<Item>> getAllItems() {
         return allItems;
-
     }
     public LiveData<Integer> getTotalCalories() {
         return totalCalories;
-
     }
-
 }
