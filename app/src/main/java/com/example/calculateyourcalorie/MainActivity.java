@@ -32,10 +32,17 @@ public class MainActivity extends AppCompatActivity {
     public static final int ADD_ITEM_REQUEST = 1;
     private ItemViewModel itemViewModel;
 
+
+
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         TextView counter = (TextView) toolbar.findViewById(R.id.toolbar_calories);
