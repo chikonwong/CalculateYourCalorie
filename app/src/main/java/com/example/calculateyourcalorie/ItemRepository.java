@@ -15,11 +15,12 @@ import java.util.List;
 public class ItemRepository {
     private ItemDao itemDao;
     private LiveData<List<Item>> allItems;
-
+    private LiveData<Integer> totalCalories;
     public ItemRepository(Application application) {
         ItemDataBase dataBase = ItemDataBase.getInstance(application);
         itemDao = dataBase.itemDao();
         allItems = itemDao.getAllItems();
+        totalCalories = itemDao.getTotalCalories();
     }
 
     public void insert(Item item) {
@@ -40,6 +41,9 @@ public class ItemRepository {
 
     public LiveData<List<Item>> getAllItems() {
         return allItems;
+    }
+    public LiveData<Integer> getTotalCalories() {
+        return totalCalories;
     }
 
     private static class InsertItemAsyncTask extends AsyncTask<Item, Void, Void> {

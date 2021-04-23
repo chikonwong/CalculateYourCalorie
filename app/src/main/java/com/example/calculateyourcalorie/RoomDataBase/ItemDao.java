@@ -28,4 +28,7 @@ public interface ItemDao {
     @Query("SELECT * FROM item_table ORDER BY date DESC")
     // if item_table have any change, display automatically
     LiveData<List<Item>> getAllItems();
+
+    @Query("SELECT SUM(calories) FROM item_table")
+    LiveData<Integer> getTotalCalories();
 }

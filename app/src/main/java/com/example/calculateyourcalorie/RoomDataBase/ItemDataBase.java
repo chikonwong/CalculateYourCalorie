@@ -42,7 +42,7 @@ public abstract class ItemDataBase extends RoomDatabase {
         }
 
         protected Void doInBackground(Void... voids) {
-            itemDao.insert(new Item("1", "2", "3", "4", 5));
+//            itemDao.insert(new Item("1", "2", "3", "4", 5));
             return null;
         }
     }

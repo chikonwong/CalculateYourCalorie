@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -18,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculateyourcalorie.RoomDataBase.Item;
@@ -34,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        TextView counter = (TextView) toolbar.findViewById(R.id.toolbar_calories);
+
+        // livedata sum calories
+        itemViewModel = new ViewModelProvider(this).get(ItemViewModel.class);
+        itemViewModel.getTotalCalories().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                counter.setText(Integer.toString(integer));
+            }
+
+        });
+
         // onClick floating action button
         FloatingActionButton FloatingActionButton = findViewById(R.id.fab);
         FloatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +164,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "All item deleted", Toast.LENGTH_SHORT).show();
                 return true;
 
-        } return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }

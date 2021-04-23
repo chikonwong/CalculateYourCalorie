@@ -13,11 +13,12 @@ import java.util.List;
 public class ItemViewModel extends AndroidViewModel {
     private ItemRepository itemRepository;
     private LiveData<List<Item>> allItems;
-
+    private LiveData<Integer> totalCalories;
     public ItemViewModel(@NonNull Application application) {
         super(application);
         itemRepository = new ItemRepository(application);
         allItems = itemRepository.getAllItems();
+        totalCalories = itemRepository.getTotalCalories();
     }
 
     public void insert(Item item) {
@@ -38,6 +39,10 @@ public class ItemViewModel extends AndroidViewModel {
 
     public LiveData<List<Item>> getAllItems() {
         return allItems;
+
+    }
+    public LiveData<Integer> getTotalCalories() {
+        return totalCalories;
 
     }
 
