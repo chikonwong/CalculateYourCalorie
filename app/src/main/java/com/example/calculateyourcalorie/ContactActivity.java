@@ -33,11 +33,8 @@ public class ContactActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
                 String subject = spinner.getSelectedItem().toString();
-
                 String message = textMessage.getText().toString();
-
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{textTo});
                 email.putExtra(Intent.EXTRA_SUBJECT, subject);
