@@ -41,7 +41,7 @@ public class AddItemActivity extends AppCompatActivity {
 
     DatePickerDialog.OnDateSetListener setListener;
 
-    String systemDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+    String systemDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(new Date());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +73,15 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-//                if (!(month = )) {
-//                }
-                String date = day + "/" + month + "/" + year;
+                String formattedMonth = "" + month;
+                String formattedDayOfMonth = "" + dayOfMonth;
+                if(month < 10){
+                    formattedMonth = "0" + month;
+                }
+                if(dayOfMonth < 10){
+                    formattedDayOfMonth = "0" + dayOfMonth;
+                }
+                String date = year + "/" + formattedMonth + "/" + formattedDayOfMonth;
                 tvDate.setText(date);
             }
         };
@@ -101,7 +107,6 @@ public class AddItemActivity extends AppCompatActivity {
                     return;
                 } else {
                     systemDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss ", Locale.getDefault()).format(new Date());
-//                    String date = systemDate;
                     String date = tvDate.getText().toString() + systemDate;
                     String period = SetItemPeriod.getText().toString();
                     String category = SetItemCategory.getText().toString();
@@ -118,13 +123,13 @@ public class AddItemActivity extends AppCompatActivity {
                     setResult(RESULT_OK, data);
                     finish();
                 }
-                Toast.makeText(AddItemActivity.this,
-                        "Date" + tvDate.getText().toString() + systemDate +
-                                " Period : " + SetItemPeriod.getText().toString() +
-                                " Catefory : " + SetItemCategory.getText().toString() +
-                                " FoodName : " + etFoodName.getText().toString() +
-                                " Calories : " + etCalories.getText().toString()
-                        , Toast.LENGTH_LONG).show();
+//                Toast.makeText(AddItemActivity.this,
+//                        "Date" + tvDate.getText().toString() + systemDate +
+//                                " Period : " + SetItemPeriod.getText().toString() +
+//                                " Catefory : " + SetItemCategory.getText().toString() +
+//                                " FoodName : " + etFoodName.getText().toString() +
+//                                " Calories : " + etCalories.getText().toString()
+//                        , Toast.LENGTH_LONG).show();
             }
         });
     }

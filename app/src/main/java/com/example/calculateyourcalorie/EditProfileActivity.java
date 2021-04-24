@@ -25,7 +25,7 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eidt_profile);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle(getString(R.string.editprofile));
 
         radioGroup = findViewById(R.id.RadioGroup_Set_Gender);
         SetProfileName = findViewById(R.id.EditText_Edit_ProfileName);

@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.calculateyourcalorie.R.string.editprofile;
+
 public class ProfileActivity extends AppCompatActivity {
     private TextView textViewProfileName;
     private TextView textViewProfileGender;
@@ -24,8 +26,6 @@ public class ProfileActivity extends AppCompatActivity {
     private String ProfileTarget;
     private String ProfileCalorieLimit;
 
-
-    //
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String NAME = "name";
     public static final String GENDER = "gender";
@@ -36,7 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-        setTitle("Profile");
+        setTitle(getString(R.string.profile));
 
         intent = this.getIntent();
         bundle = intent.getExtras();

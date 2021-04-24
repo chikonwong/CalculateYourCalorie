@@ -9,15 +9,15 @@ import android.widget.Button;
 
 public class SettingsActivity extends AppCompatActivity {
     Button buttonProfile;
-    Button buttonContect;
+    Button buttonContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
-        setTitle("Settings");
+        setTitle(getString(R.string.setting));
         buttonProfile = findViewById(R.id.Button_EditProfile);
-        buttonContect = findViewById(R.id.Button_ContactUs);
+        buttonContact = findViewById(R.id.Button_ContactUs);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,7 +25,7 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        buttonContect.setOnClickListener(new View.OnClickListener() {
+        buttonContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, ContactActivity.class);
