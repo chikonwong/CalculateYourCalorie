@@ -123,13 +123,13 @@ public class AddItemActivity extends AppCompatActivity {
                     setResult(RESULT_OK, data);
                     finish();
                 }
-//                Toast.makeText(AddItemActivity.this,
-//                        "Date" + tvDate.getText().toString() + systemDate +
-//                                " Period : " + SetItemPeriod.getText().toString() +
-//                                " Catefory : " + SetItemCategory.getText().toString() +
-//                                " FoodName : " + etFoodName.getText().toString() +
-//                                " Calories : " + etCalories.getText().toString()
-//                        , Toast.LENGTH_LONG).show();
+                Toast.makeText(AddItemActivity.this,
+                        "Date : " + tvDate.getText().toString()  +
+                                " Period : " + SetItemPeriod.getText().toString() +
+                                " Catefory : " + SetItemCategory.getText().toString() +
+                                " FoodName : " + etFoodName.getText().toString() +
+                                " Calories : " + etCalories.getText().toString()
+                        , Toast.LENGTH_LONG).show();
             }
         });
     }
