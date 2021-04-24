@@ -26,4 +26,11 @@
     <string name="protein">蛋白質</string>
     <string name="fruits">生果</string>
     <string name="add">新增</string>
+    <string name="subject">主題:</string>
+    <string name="message">信息:</string>
+    <string name="send">提交</string>
+    <string name="complaint">投訴</string>
+    <string name="suggestion">建議</string>
+    <string name="contactUs">聯絡我們</string>
+    <string name="delete_all_items">刪除所有日記</string>
 </resources>

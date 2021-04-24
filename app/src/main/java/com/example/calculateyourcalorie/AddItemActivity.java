@@ -73,6 +73,8 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
+//                if (!(month = )) {
+//                }
                 String date = day + "/" + month + "/" + year;
                 tvDate.setText(date);
             }
@@ -97,9 +99,10 @@ public class AddItemActivity extends AppCompatActivity {
                         SetItemCategory.getText().toString().isEmpty()) {
                     Toast.makeText(AddItemActivity.this, "please fill in all the grids", Toast.LENGTH_SHORT).show();
                     return;
-                }else {
-                    systemDate = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss ", Locale.getDefault()).format(new Date());
-                    String date = systemDate;
+                } else {
+                    systemDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss ", Locale.getDefault()).format(new Date());
+//                    String date = systemDate;
+                    String date = tvDate.getText().toString() + systemDate;
                     String period = SetItemPeriod.getText().toString();
                     String category = SetItemCategory.getText().toString();
                     String foodname = etFoodName.getText().toString();
@@ -116,7 +119,7 @@ public class AddItemActivity extends AppCompatActivity {
                     finish();
                 }
                 Toast.makeText(AddItemActivity.this,
-                        "Date" + tvDate.getText().toString() +
+                        "Date" + tvDate.getText().toString() + systemDate +
                                 " Period : " + SetItemPeriod.getText().toString() +
                                 " Catefory : " + SetItemCategory.getText().toString() +
                                 " FoodName : " + etFoodName.getText().toString() +
