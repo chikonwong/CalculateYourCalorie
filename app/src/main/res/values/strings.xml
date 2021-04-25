@@ -46,4 +46,7 @@
     <string name="suggestion">Suggestion</string>
     <string name="contactUs">ContactUs</string>
     <string name="delete_all_items">Delete All Items</string>
+    <string name="ateCar">ateCar</string>
+    <string name="rest">rest</string>
+    <string name="fillIn">Please Fill In All The Grids!</string>
 </resources>

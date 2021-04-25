@@ -35,10 +35,19 @@ public class EditProfileActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveProfile();
+
+                if (SetProfileName.getText().toString().isEmpty() ||
+                        SetProfileGender.getText().toString().isEmpty() ||
+                        SetProfileTarget.getText().toString().isEmpty() ||
+                        SetProfileCalorieLimit.getText().toString().isEmpty()) {
+                    Toast.makeText(EditProfileActivity.this, getString(R.string.fillIn), Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    saveProfile();
+                }
                 Toast.makeText(EditProfileActivity.this,
                         "Name : " + SetProfileName.getText().toString() +
-                                " Gender : "  + SetProfileGender.getText().toString()+
+                                " Gender : " + SetProfileGender.getText().toString() +
                                 "Target : " + SetProfileTarget.getText().toString() +
                                 "CalorieLimit : " + SetProfileCalorieLimit.getText().toString()
                         , Toast.LENGTH_SHORT).show();
@@ -51,21 +60,22 @@ public class EditProfileActivity extends AppCompatActivity {
         SetProfileGender = findViewById(radioId);
 
     }
-    public void saveProfile(){
-        Intent intent = new Intent(EditProfileActivity.this,ProfileActivity.class);
+
+    public void saveProfile() {
+        Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString("name" ,SetProfileName.getText().toString());
-        bundle.putString("gender" ,SetProfileGender.getText().toString());
-        bundle.putString("target" ,SetProfileTarget.getText().toString());
-        bundle.putString("calorielimit" ,SetProfileCalorieLimit.getText().toString());
+        bundle.putString("name", SetProfileName.getText().toString());
+        bundle.putString("gender", SetProfileGender.getText().toString());
+        bundle.putString("target", SetProfileTarget.getText().toString());
+        bundle.putString("calorielimit", SetProfileCalorieLimit.getText().toString());
         intent.putExtras(bundle);
-        startActivityForResult(intent,1);
+        startActivityForResult(intent, 1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
+        switch (requestCode) {
             case RESULT_OK:
                 Bundle bundle = data.getExtras();
                 SetProfileName.setText(bundle.getString("name"));

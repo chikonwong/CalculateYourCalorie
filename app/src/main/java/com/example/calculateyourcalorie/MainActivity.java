@@ -42,21 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TARGET = "target";
-
     private int mainTarget;
-
     ProgressBar adbCalorieLimitBar;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
@@ -88,14 +80,12 @@ public class MainActivity extends AppCompatActivity {
         itemViewModel.getTotalCalories().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                counter.setText("TotalCalories : "+integer);
+                counter.setText(getString(R.string.ateCar)+integer);
                 int x;
                 x = mainTarget-integer;
-                textViewProfileTarget.setText("Target : "+x);
+                textViewProfileTarget.setText(getString(R.string.rest)+ x);
                 adbCalorieLimitBar.setProgress(x);
-
             }
-
         });
 
         // onClick floating action button
@@ -217,11 +207,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         ProfileTarget = sharedPreferences.getString(TARGET, "");
-
         textViewProfileTarget.setText(ProfileTarget);
     }
 }

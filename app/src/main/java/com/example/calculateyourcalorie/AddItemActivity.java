@@ -48,7 +48,7 @@ public class AddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_item);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Add Item");
+        actionBar.setTitle(getString(R.string.add));
 
         tvDate = findViewById(R.id.TextView_Date);
 
@@ -103,7 +103,7 @@ public class AddItemActivity extends AppCompatActivity {
                         tvDate.getText().toString().isEmpty() ||
                         SetItemPeriod.getText().toString().isEmpty() ||
                         SetItemCategory.getText().toString().isEmpty()) {
-                    Toast.makeText(AddItemActivity.this, "please fill in all the grids", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddItemActivity.this, getString(R.string.fillIn), Toast.LENGTH_SHORT).show();
                     return;
                 } else {
                     systemDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss ", Locale.getDefault()).format(new Date());

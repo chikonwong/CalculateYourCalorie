@@ -33,4 +33,7 @@
     <string name="suggestion">建議</string>
     <string name="contactUs">聯絡我們</string>
     <string name="delete_all_items">刪除所有日記</string>
+    <string name="ateCar">"已攝取卡路里 : "</string>
+    <string name="rest">"餘下卡路里 : "</string>
+    <string name="fillIn">請輸入所有資料!</string>
 </resources>
