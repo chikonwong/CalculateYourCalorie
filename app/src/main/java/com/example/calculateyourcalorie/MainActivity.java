@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,9 +34,22 @@ public class MainActivity extends AppCompatActivity {
     public static final int ADD_ITEM_REQUEST = 1;
     private ItemViewModel itemViewModel;
 
+    private TextView textViewProfileTarget;
+
+    private Intent intent;
+    private Bundle bundle;
+    private String ProfileTarget;
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TARGET = "target";
+
+    private int mainTarget;
+
+    ProgressBar adbCalorieLimitBar;
 
 
-    
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +61,39 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         TextView counter = (TextView) toolbar.findViewById(R.id.toolbar_calories);
+        adbCalorieLimitBar = (ProgressBar) findViewById(R.id.add_bar_CalorieLimitBar);
+
+
+        intent = this.getIntent();
+        bundle = intent.getExtras();
+
+        textViewProfileTarget = findViewById(R.id.mainTarget);
+
+
+        if (bundle != null) {
+            textViewProfileTarget.setText(bundle.getString("target"));
+
+            SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(TARGET, bundle.getString("target"));
+            editor.apply();
+
+        }
+        loadData();
+        mainTarget = Integer.parseInt((textViewProfileTarget.getText().toString()));
+        adbCalorieLimitBar.setMax(mainTarget);
 
         // livedata sum calories
         itemViewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         itemViewModel.getTotalCalories().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                counter.setText(Integer.toString(integer));
+                counter.setText("TotalCalories : "+integer);
+                int x;
+                x = mainTarget-integer;
+                textViewProfileTarget.setText("Target : "+x);
+                adbCalorieLimitBar.setProgress(x);
+
             }
 
         });
@@ -174,5 +215,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        ProfileTarget = sharedPreferences.getString(TARGET, "");
+
+        textViewProfileTarget.setText(ProfileTarget);
     }
 }
