@@ -49,9 +49,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView counter = (TextView) findViewById(R.id.toolbar_calories);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        TextView counter = (TextView) toolbar.findViewById(R.id.toolbar_calories);
         adbCalorieLimitBar = (ProgressBar) findViewById(R.id.add_bar_CalorieLimitBar);
         intent = this.getIntent();
         bundle = intent.getExtras();
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         // set toolbar
         Toolbar toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(getString(R.string.app_name));
 
         // NavigationView
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
