@@ -6,7 +6,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -54,17 +53,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         TextView counter = (TextView) toolbar.findViewById(R.id.toolbar_calories);
         adbCalorieLimitBar = (ProgressBar) findViewById(R.id.add_bar_CalorieLimitBar);
-
-
         intent = this.getIntent();
         bundle = intent.getExtras();
-
         textViewProfileTarget = findViewById(R.id.mainTarget);
-
 
         if (bundle != null) {
             textViewProfileTarget.setText(bundle.getString("target"));
-
             SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(TARGET, bundle.getString("target"));
@@ -72,7 +66,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
         loadData();
-        mainTarget = Integer.parseInt((textViewProfileTarget.getText().toString()));
+        if (textViewProfileTarget.getText().toString() == "") {
+            mainTarget = 0;
+        } else {
+            mainTarget = Integer.parseInt(textViewProfileTarget.getText().toString());
+        }
         adbCalorieLimitBar.setMax(mainTarget);
 
         // livedata sum calories
@@ -80,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
         itemViewModel.getTotalCalories().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                counter.setText(getString(R.string.ateCar)+integer);
+                counter.setText(getString(R.string.ateCar) + integer);
                 int x;
-                x = mainTarget-integer;
-                textViewProfileTarget.setText(getString(R.string.rest)+ x);
+                x = mainTarget - integer;
+                textViewProfileTarget.setText(getString(R.string.rest) + x);
                 adbCalorieLimitBar.setProgress(x);
             }
         });
