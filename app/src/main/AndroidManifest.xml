@@ -11,8 +11,7 @@
         android:theme="@style/Theme.CalculateYourCalorie">
         <activity
             android:name=".ContactActivity"
-            android:parentActivityName=".SettingsActivity">
-        </activity>
+            android:parentActivityName=".SettingsActivity" />
         <activity
             android:name=".SettingsActivity"
             android:parentActivityName=".MainActivity" />
