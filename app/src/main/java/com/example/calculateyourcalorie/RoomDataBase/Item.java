@@ -21,7 +21,6 @@ public class Item {
     @ColumnInfo(name = "foodname")
     private String foodname;
     @ColumnInfo(name = "calories")
-
     private int calories;
 
     public Item(String date, String period, String category, String foodname, int calories) {

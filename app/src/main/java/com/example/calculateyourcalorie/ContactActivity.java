@@ -26,6 +26,7 @@ public class ContactActivity extends AppCompatActivity {
         textMessage = (EditText) findViewById(R.id.editTextMessage);
 
         Spinner spinner = findViewById(R.id.editTextSubject);
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.emailSubjects, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
